@@ -1,7 +1,7 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
-import Root, { ROUTES } from "./components/root/Root";
+import Root from "./components/root/Root";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
