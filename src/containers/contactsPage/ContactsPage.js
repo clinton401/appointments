@@ -31,14 +31,20 @@ export const ContactsPage = (props) => {
   };
 
   useEffect(() => {
-   const value = contacts.includes(name);
-   value ? setDuplicate(true) : setDuplicate(false);
+    const nameIsDuplicate = () => {
+      const found = contacts.find((contact) => contact.name === name);
+      if (found !== undefined) {
+        return true;
+      }
+      return false;
+    };
 
-   return () => {
-    setDuplicate(false)
-   }
-   
-  }, [contacts])
+    if (nameIsDuplicate()) {
+      setDuplicate(true);
+    } else {
+      setDuplicate(false);
+    }
+  }, [name, contacts, duplicate]);
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
